@@ -1,31 +1,26 @@
 {
-  "extends": ["airbnb-base","plugin:jest/recommended","plugin:react/recommended"],
   "env": {
-    "browser": true
+    "browser": true,
+    "node": true,
+    "commonjs": true,
+    "jest": true,
+    "es6": true
   },
   "globals": {
-    "shallow": true,
-    "render": true,
-    "mount": true
+    "fail":true
   },
-  "parser": "babel-eslint",
-  "plugins": ["jest","react"],
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
+  "plugins": ["jest"],
+  "extends": ["eslint:recommended", "plugin:jest/recommended"],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2018
   },
   "rules": {
-    "arrow-body-style": "off",
-    "class-methods-use-this": "off",
-    "global-require": "off",
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
-    "linebreak-style": "off",
-    "no-multi-assign": "off",
-    "no-param-reassign": ["error", { "props": false }],
-    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
-    "no-trailing-spaces":"off",
-    "no-underscore-dangle": "off",
-    "strict": "off"
+    "no-console": "off",
+    "indent": [ "error", 2 ],
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "comma-dangle": ["error", "always-multiline"],
+    "semi": [ "error", "always" ],
+    "no-unused-vars": [1, {"vars": "local", "args": "none"}]
   }
 }
