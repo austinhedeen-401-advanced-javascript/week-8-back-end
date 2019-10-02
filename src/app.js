@@ -11,11 +11,13 @@ const morgan = require('morgan');
 const notFound = require('./middleware/404');
 const errorHandler = require('./middleware/500');
 
+const authRouter = require('./route/auth');
+
 const app = express();
 
 // Application-Level Middleware
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(morgan('dev'));
 
@@ -23,8 +25,10 @@ app.use(morgan('dev'));
 app.use('/docs', express.static('docs'));
 
 // Routes
+app.use(authRouter);
+
 app.get('/', (request, response) => {
-  response.send('Hello world!');
+  response.send('Week 8 Project API Server');
 });
 
 // Catchalls
