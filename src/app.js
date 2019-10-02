@@ -3,8 +3,9 @@
  * @module
  */
 
-const cors = require('cors');
 const express = require('express');
+
+const cors = require('cors');
 const morgan = require('morgan');
 
 const notFound = require('./middleware/404');
