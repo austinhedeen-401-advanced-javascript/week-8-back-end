@@ -5,11 +5,13 @@
 ### Author: Austin Hedeen
 
 ### Links and Resources
+* [Server Deployment](https://intense-springs-89759.herokuapp.com/)
+* [Travis](https://travis-ci.com/austinhedeen-401-advanced-javascript/week-8-back-end)
 * [PR - Day 1 (Setup/Config)](https://github.com/austinhedeen-401-advanced-javascript/week-8-back-end/pull/1)
-* [travis](https://travis-ci.com/austinhedeen-401-advanced-javascript/week-8-back-end)
+* [PR - Day 2 (API Auth)](https://github.com/austinhedeen-401-advanced-javascript/week-8-back-end/pull/2)
 
 #### Documentation
-* TBD
+* [JSDoc](https://intense-springs-89759.herokuapp.com/docs)
 
 ### Modules
 #### `app.js`
@@ -31,3 +33,6 @@ The server instance for use in testing
   
 #### Tests
 * `npm test`
+
+#### UML
+![](assets/server-uml.png)
