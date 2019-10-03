@@ -70,7 +70,7 @@ function handlePost(request, response, next) {
 
 function handlePut(request, response, next) {
   const id = request.params.id;
-  const data = request.data;
+  const data = request.body;
   request.model.update(id, data)
     .then(results => response.json(results))
     .catch(next);
