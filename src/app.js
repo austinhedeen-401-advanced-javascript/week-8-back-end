@@ -11,6 +11,7 @@ const morgan = require('morgan');
 const notFound = require('./middleware/404');
 const errorHandler = require('./middleware/500');
 
+const apiRouter = require('./route/api');
 const authRouter = require('./route/auth');
 
 const app = express();
@@ -25,6 +26,7 @@ app.use(morgan('dev'));
 app.use('/docs', express.static('docs'));
 
 // Routes
+app.use(apiRouter);
 app.use(authRouter);
 
 app.get('/', (request, response) => {

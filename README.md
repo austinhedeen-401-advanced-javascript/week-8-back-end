@@ -9,6 +9,7 @@
 * [Travis](https://travis-ci.com/austinhedeen-401-advanced-javascript/week-8-back-end)
 * [PR - Day 1 (Setup/Config)](https://github.com/austinhedeen-401-advanced-javascript/week-8-back-end/pull/1)
 * [PR - Day 2 (API Auth)](https://github.com/austinhedeen-401-advanced-javascript/week-8-back-end/pull/2)
+* [PR - Day 3 (API Resources)](https://github.com/austinhedeen-401-advanced-javascript/week-8-back-end/pull/3)
 
 #### Documentation
 * [JSDoc](https://intense-springs-89759.herokuapp.com/docs)
