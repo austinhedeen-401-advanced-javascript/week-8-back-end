@@ -24,6 +24,7 @@
   "homepage": "https://github.com/austinhedeen-401-advanced-javascript/week-8-back-end#readme",
   "dependencies": {
     "bcrypt": "^3.0.6",
+    "cloudinary": "^1.15.0",
     "cors": "^2.8.5",
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
