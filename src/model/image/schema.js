@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 
 const image = mongoose.Schema({
-  data: { type: Buffer, required: true },
+  url: { type: String, required: true },
   title: { type: String },
   description: { type: String },
 });
