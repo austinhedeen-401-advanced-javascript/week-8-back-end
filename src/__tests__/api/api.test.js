@@ -11,50 +11,52 @@ beforeAll(async (done) => {
 
 afterAll(supergoose.stopDB);
 
-describe('Todo API', () => {
+describe('Image API', () => {
 
-  const endpoint = '/api/v1/todo/';
-  const testTodo = {
-    title: 'Todo 1',
-    content: 'A simple todo',
+  const endpoint = '/api/v1/image/';
+  const testImage = {
+    url: 'http://example.com/1',
+    title: 'Title 1',
+    description: 'Description 1',
   };
-  const testTodoTwo = {
-    title: 'Todo 2',
-    content: 'Another todo',
+  const testImageTwo = {
+    url: 'http://example.com/2',
+    title: 'Title 2',
+    description: 'Description 2',
   };
   const updateContent = {
-    content: 'Updated content!',
+    description: 'Updated description!',
   };
-  let todoOneId;
+  let imageOneId;
 
-  test('Creating a new todo should return 200 and the created object', () => {
+  test('Creating a new image should return 200 and the created object', () => {
     return mockRequest
       .post(endpoint)
-      .send(testTodo)
+      .send(testImage)
       .then(response => {
-        todoOneId = response.body._id;
+        imageOneId = response.body._id;
         expect(response.status).toEqual(200);
-        expect(response.body.title).toEqual(testTodo.title);
+        expect(response.body.title).toEqual(testImage.title);
       });
   });
 
-  test('Fetching a todo should return 200 and the object', () => {
-    return mockRequest.get(endpoint + todoOneId).send()
+  test('Fetching an image should return 200 and the object', () => {
+    return mockRequest.get(endpoint + imageOneId).send()
       .then(response => {
-        todoOneId = response.body._id;
+        imageOneId = response.body._id;
         expect(response.status).toEqual(200);
-        expect(response.body.title).toEqual(testTodo.title);
+        expect(response.body.title).toEqual(testImage.title);
       });
   });
 
-  test('Fetching all todos should return 200 and the array of saved objects', () => {
+  test('Fetching all images should return 200 and the array of saved objects', () => {
     return mockRequest.get(endpoint).send()
       .then(response => {
         expect(response.status).toEqual(200);
         const results = response.body;
-        expect(results[0]._id).toEqual(todoOneId);
+        expect(results[0]._id).toEqual(imageOneId);
 
-        return mockRequest.post(endpoint).send(testTodoTwo);
+        return mockRequest.post(endpoint).send(testImageTwo);
       })
       .then(() => mockRequest.get(endpoint).send())
       .then(response => {
@@ -63,19 +65,19 @@ describe('Todo API', () => {
       });
   });
 
-  test('Updating a todo should return 200 and the updated object', () => {
-    return mockRequest.put(endpoint + todoOneId).send(updateContent)
+  test('Updating an image should return 200 and the updated object', () => {
+    return mockRequest.put(endpoint + imageOneId).send(updateContent)
       .then(response => {
         expect(response.status).toEqual(200);
-        expect(response.body.content).toEqual(updateContent.content);
+        expect(response.body.description).toEqual(updateContent.description);
       });
   });
 
-  test('Deleting a todo should return 200 and the deleted object', () => {
-    return mockRequest.delete(endpoint + todoOneId).send()
+  test('Deleting an image should return 200 and the deleted object', () => {
+    return mockRequest.delete(endpoint + imageOneId).send()
       .then(response => {
         expect(response.status).toEqual(200);
-        expect(response.body.title).toEqual(testTodo.title);
+        expect(response.body.title).toEqual(testImage.title);
       });
   });
 
