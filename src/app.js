@@ -13,6 +13,7 @@ const errorHandler = require('./middleware/500');
 
 const apiRouter = require('./route/api');
 const authRouter = require('./route/auth');
+const imageRouter = require('./route/cloudinary');
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use('/docs', express.static('docs'));
 // Routes
 app.use(apiRouter);
 app.use(authRouter);
+app.use(imageRouter);
 
 app.get('/', (request, response) => {
   response.send('Week 8 Project API Server');
